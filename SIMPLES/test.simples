@@ -8,6 +8,7 @@ inicio
    flutuante d <- d+b;
    flutuante g <- c+a;
    flutuante f <- f+a;
+   flutuante r <- r+b;
    b <- a + b;
 
 fim
