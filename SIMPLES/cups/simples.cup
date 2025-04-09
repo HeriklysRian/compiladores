@@ -78,19 +78,19 @@ tipo ::=      DECLINT:t   {: RESULT = "INT"  ;     :}
    
 
 declare_variable ::=  tipo:t  ID:id {: if(t.equals("INT")) {System.out.print("\nint " + id);} else {System.out.print("\nfloat " + id);}  :} 
-                      ATTRIB       {:System.out.print("="); :}
-                      expr:value   {: System.out.print(value); :}
-                      SEMI         {:System.out.print(";\n");:}
+                      ATTRIB       {:System.out.print(" = "); :}
+                      expr:value   {:System.out.print(value); :}
+                      SEMI         {:System.out.print(";");:}
                     
                      | tipo:t ID:id {: if(t.equals("INT")) {System.out.print("\nint " + id);} else {System.out.print("\nfloat " + id);}  :} 
                       SEMI         {: System.out.print(";"); :}
                      ;
 
 
-assign		::=   ID:id             {:System.out.print(id);:}
-                  ATTRIB            {:System.out.print("= ");:}
+assign		::=   ID:id             {:System.out.print("\n"+id);:}
+                  ATTRIB            {:System.out.print(" = ");:}
                   expr:value        {: System.out.print(value); :} 
-                  SEMI              {: System.out.print(";"); :}
+                  SEMI              {: System.out.print(";\n"); :}
                  ;
 
 
@@ -103,7 +103,7 @@ expr     ::= expr:e1 PLUS expr:e2         {: RESULT =  e1 + "+" + e2;  :}
            | expr:e1 LESS expr:e2         {: RESULT =  e1 + "<" + e2;   :}
            | expr:e1 E expr:e2            {: RESULT =  e1 + "&&" + e2;  :}
            | expr:e1 OU expr:e2           {: RESULT =  e1 + "||" + e2;  :}
-           | NAO expr:e1                 {: RESULT =   "!" + e1;    ;  :}
+           | NAO expr:e1                 {: RESULT =   "!" + e1;      :}
            | LPAREN  
              expr:e1                      {: RESULT =  "(" + e1  + ")"; :} 
              RPAREN   

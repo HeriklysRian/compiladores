@@ -6,6 +6,7 @@ inicio
    inteiro b;
    inteiro c;
    flutuante d <- d+b;
+   flutuante g <- c+a;
    b <- a + b;
 
 fim
