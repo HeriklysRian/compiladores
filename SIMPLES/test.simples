@@ -10,7 +10,6 @@ inicio
    flutuante f <- f+a;
    flutuante r <- r+b;
    flutuante p <- p+r;
-   flutuante l <-l+p;
    b <- a + b;
 
 fim
