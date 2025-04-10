@@ -6,6 +6,9 @@ int b;
 int c;
 float d = d+b;
 float g = c+a;
+float f = f+a;
+float r = r+b;
+float p = p+r;
 b = a+b;
 
 return 0; 
