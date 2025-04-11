@@ -118,7 +118,7 @@ tipo ::=      DECLINT:t   {: RESULT = "INT"  ;     :}
 declare_variable ::=  tipo:t  ID:id {: emit_declaracao_variavel(t,id);  :} 
                       ATTRIB       {: emit_attr(); :}
                       expr:value   {: emit_expr(value); :}
-                      SEMI         {:emit_semi();:}
+                      SEMI         {: emit_semi();  :}
                     
                      | tipo:t ID:id {: emit_declaracao_variavel(t,id);  :} 
                       SEMI         {: emit_semi(); :}
