@@ -182,7 +182,7 @@ public class parser extends java_cup.runtime.lr_parser {
 
 
       
-    
+
     public void report_error(String message, Object info) {
         StringBuilder m = new StringBuilder("Error");
    
@@ -205,6 +205,44 @@ public class parser extends java_cup.runtime.lr_parser {
         report_error(message, info);
         System.exit(1);
     }
+
+        public void emit_main(){
+        System.out.print("#include <stdio.h>\n#include <stdlib.h>\nint main()");
+    }
+
+        public void emit_startprogram(){
+            System.out.print("{");
+        }
+
+        public void emit_endprogram(){
+            System.out.print("\n}");
+        }
+
+        public void emit_return(){
+            System.out.print("\nreturn 0;");
+        }
+
+        public void emit_declaracao_variavel(String t, String id){
+            if(t.equals("INT")) {
+                System.out.print("\nint " + id);
+                } else {
+                    System.out.print("\nfloat " + id);
+                    }
+        }
+        public void emit_expr(String value){
+            System.out.print(value);
+        }
+
+        public void emit_semi(){
+            System.out.print(";");
+        }
+
+        public void emit_attr(){
+            System.out.print(" = ");
+        }
+        public void emit_id(String id){
+            System.out.print("\n"+id);
+        }
 
 
 /** Cup generated class to encapsulate user supplied action code.*/
@@ -235,7 +273,7 @@ class CUP$parser$actions {
           case 0: // NT$0 ::= 
             {
               Object RESULT =null;
- System.out.print("#include <stdio.h>\n#include <stdlib.h>\nint main()"); 
+ emit_main(); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$0",8, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -244,7 +282,7 @@ class CUP$parser$actions {
           case 1: // NT$1 ::= 
             {
               Object RESULT =(Object) ((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
- System.out.print("{");            
+ emit_startprogram();
               CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$1",9, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -255,7 +293,7 @@ class CUP$parser$actions {
               Object RESULT =null;
               // propagate RESULT from NT$1
                 RESULT = (Object) ((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-		 System.out.print("\nreturn 0; \n}");             
+		 emit_return(); emit_endprogram(); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("program",0, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-5)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -344,7 +382,7 @@ class CUP$parser$actions {
 		int idleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
 		int idright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String id = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
- if(t.equals("INT")) {System.out.print("\nint " + id);} else {System.out.print("\nfloat " + id);}  
+ emit_declaracao_variavel(t,id);  
               CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$2",10, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -359,7 +397,7 @@ class CUP$parser$actions {
 		int idleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
 		int idright = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		String id = (String)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-System.out.print(" = "); 
+ emit_attr(); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$3",11, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -377,7 +415,7 @@ System.out.print(" = ");
 		int valueleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
 		int valueright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String value = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
-System.out.print(value); 
+ emit_expr(value); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$4",12, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -397,7 +435,7 @@ System.out.print(value);
 		int valueleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
 		int valueright = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		String value = (String)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-		System.out.print(";");
+		emit_semi();
               CUP$parser$result = parser.getSymbolFactory().newSymbol("declare_variable",4, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-7)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -412,7 +450,7 @@ System.out.print(value);
 		int idleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
 		int idright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String id = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
- if(t.equals("INT")) {System.out.print("\nint " + id);} else {System.out.print("\nfloat " + id);}  
+ emit_declaracao_variavel(t,id);  
               CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$5",13, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -429,7 +467,7 @@ System.out.print(value);
 		int idleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
 		int idright = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		String id = (String)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-		 System.out.print(";"); 
+		 emit_semi(); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("declare_variable",4, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-3)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -441,7 +479,7 @@ System.out.print(value);
 		int idleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
 		int idright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String id = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
-System.out.print("\n"+id);
+emit_id(id);
               CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$6",14, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -453,7 +491,7 @@ System.out.print("\n"+id);
 		int idleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
 		int idright = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		String id = (String)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-System.out.print(" = ");
+emit_attr();
               CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$7",15, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -468,7 +506,7 @@ System.out.print(" = ");
 		int valueleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
 		int valueright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String value = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
- System.out.print(value); 
+ emit_expr(value); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$8",16, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
@@ -485,7 +523,7 @@ System.out.print(" = ");
 		int valueleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
 		int valueright = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		String value = (String)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-		 System.out.print(";\n"); 
+		 emit_semi(); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("assign",3, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-6)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;

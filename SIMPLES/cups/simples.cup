@@ -6,7 +6,7 @@ import java.util.*;
    
 parser code {:
       
-    
+
     public void report_error(String message, Object info) {
         StringBuilder m = new StringBuilder("Error");
    
@@ -29,6 +29,44 @@ parser code {:
         report_error(message, info);
         System.exit(1);
     }
+
+        public void emit_main(){
+        System.out.print("#include <stdio.h>\n#include <stdlib.h>\nint main()");
+    }
+
+        public void emit_startprogram(){
+            System.out.print("{");
+        }
+
+        public void emit_endprogram(){
+            System.out.print("\n}");
+        }
+
+        public void emit_return(){
+            System.out.print("\nreturn 0;");
+        }
+
+        public void emit_declaracao_variavel(String t, String id){
+            if(t.equals("INT")) {
+                System.out.print("\nint " + id);
+                } else {
+                    System.out.print("\nfloat " + id);
+                    }
+        }
+        public void emit_expr(String value){
+            System.out.print(value);
+        }
+
+        public void emit_semi(){
+            System.out.print(";");
+        }
+
+        public void emit_attr(){
+            System.out.print(" = ");
+        }
+        public void emit_id(String id){
+            System.out.print("\n"+id);
+        }
 :};
    
 
@@ -56,10 +94,10 @@ precedence left EQUALS;
 
 
 /* The grammar rules */
-program ::= PROGRAM        {: System.out.print("#include <stdio.h>\n#include <stdlib.h>\nint main()"); :} 
-            STARTPRG       {: System.out.print("{");            :} 
+program ::= PROGRAM        {: emit_main(); :} 
+            STARTPRG       {: emit_startprogram();:} 
             list_command   
-            ENDPRG         {: System.out.print("\nreturn 0; \n}");             :}
+            ENDPRG         {: emit_return(); emit_endprogram(); :}
             ;
 
 list_command ::= list_command command 
@@ -77,20 +115,20 @@ tipo ::=      DECLINT:t   {: RESULT = "INT"  ;     :}
             ;
    
 
-declare_variable ::=  tipo:t  ID:id {: if(t.equals("INT")) {System.out.print("\nint " + id);} else {System.out.print("\nfloat " + id);}  :} 
-                      ATTRIB       {:System.out.print(" = "); :}
-                      expr:value   {:System.out.print(value); :}
-                      SEMI         {:System.out.print(";");:}
+declare_variable ::=  tipo:t  ID:id {: emit_declaracao_variavel(t,id);  :} 
+                      ATTRIB       {: emit_attr(); :}
+                      expr:value   {: emit_expr(value); :}
+                      SEMI         {:emit_semi();:}
                     
-                     | tipo:t ID:id {: if(t.equals("INT")) {System.out.print("\nint " + id);} else {System.out.print("\nfloat " + id);}  :} 
-                      SEMI         {: System.out.print(";"); :}
+                     | tipo:t ID:id {: emit_declaracao_variavel(t,id);  :} 
+                      SEMI         {: emit_semi(); :}
                      ;
 
 
-assign		::=   ID:id             {:System.out.print("\n"+id);:}
-                  ATTRIB            {:System.out.print(" = ");:}
-                  expr:value        {: System.out.print(value); :} 
-                  SEMI              {: System.out.print(";\n"); :}
+assign		::=   ID:id             {:emit_id(id);:}
+                  ATTRIB            {:emit_attr();:}
+                  expr:value        {: emit_expr(value); :} 
+                  SEMI              {: emit_semi(); :}
                  ;
 
 

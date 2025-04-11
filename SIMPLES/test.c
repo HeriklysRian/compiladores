@@ -8,11 +8,8 @@ float d = d+b;
 float g = c+a;
 float f = f+a;
 float r = r+b;
-<<<<<<< HEAD
 float p = p+r;
-=======
->>>>>>> 44dad09 (	modified:   SIMPLES/build/jar/simples-compiler.jar)
+float e = e+a;
 b = a+b;
-
-return 0; 
+return 0;
 }
