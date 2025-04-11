@@ -12,6 +12,7 @@ inicio
    flutuante p <- p+r;
    flutuante e <- e+a;
    b <- a + b;
+   escreva a;
 
 fim
 
