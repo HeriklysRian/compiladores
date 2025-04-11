@@ -28,17 +28,19 @@ public class parser extends java_cup.runtime.lr_parser {
   /** Production table. */
   protected static final short _production_table[][] = 
     unpackFromStrings(new String[] {
-    "\000\043\000\002\012\002\000\002\013\002\000\002\002" +
+    "\000\047\000\002\014\002\000\002\015\002\000\002\002" +
     "\010\000\002\002\004\000\002\003\004\000\002\003\002" +
-    "\000\002\004\003\000\002\004\003\000\002\010\003\000" +
-    "\002\010\003\000\002\014\002\000\002\015\002\000\002" +
-    "\016\002\000\002\006\012\000\002\017\002\000\002\006" +
-    "\006\000\002\020\002\000\002\021\002\000\002\022\002" +
-    "\000\002\005\011\000\002\007\005\000\002\007\005\000" +
-    "\002\007\005\000\002\007\005\000\002\007\005\000\002" +
-    "\007\005\000\002\007\005\000\002\007\005\000\002\007" +
-    "\005\000\002\007\004\000\002\023\002\000\002\007\006" +
-    "\000\002\007\003\000\002\007\003\000\002\007\003" });
+    "\000\002\004\003\000\002\004\003\000\002\004\003\000" +
+    "\002\004\003\000\002\012\003\000\002\012\003\000\002" +
+    "\016\002\000\002\017\002\000\002\020\002\000\002\006" +
+    "\012\000\002\021\002\000\002\006\006\000\002\022\002" +
+    "\000\002\023\002\000\002\024\002\000\002\005\011\000" +
+    "\002\007\005\000\002\010\005\000\002\011\005\000\002" +
+    "\011\005\000\002\011\005\000\002\011\005\000\002\011" +
+    "\005\000\002\011\005\000\002\011\005\000\002\011\005" +
+    "\000\002\011\005\000\002\011\004\000\002\025\002\000" +
+    "\002\011\006\000\002\011\003\000\002\011\003\000\002" +
+    "\011\003" });
 
   /** Access to production table. */
   public short[][] production_table() {return _production_table;}
@@ -46,73 +48,86 @@ public class parser extends java_cup.runtime.lr_parser {
   /** Parse-action table. */
   protected static final short[][] _action_table = 
     unpackFromStrings(new String[] {
-    "\000\072\000\004\017\005\001\002\000\004\002\074\001" +
+    "\000\102\000\004\017\005\001\002\000\004\002\104\001" +
     "\002\000\004\020\001\001\002\000\004\020\007\001\002" +
-    "\000\012\021\000\024\000\025\000\047\000\001\002\000" +
-    "\012\021\ufffc\024\ufffc\025\ufffc\047\ufffc\001\002\000\012" +
-    "\021\014\024\015\025\020\047\013\001\002\000\012\021" +
-    "\ufffb\024\ufffb\025\ufffb\047\ufffb\001\002\000\004\036\ufff1" +
-    "\001\002\000\004\002\uffff\001\002\000\004\047\ufff9\001" +
-    "\002\000\012\021\ufffa\024\ufffa\025\ufffa\047\ufffa\001\002" +
-    "\000\004\047\022\001\002\000\004\047\ufff8\001\002\000" +
-    "\012\021\ufffd\024\ufffd\025\ufffd\047\ufffd\001\002\000\006" +
-    "\032\ufff3\036\ufff7\001\002\000\004\036\026\001\002\000" +
-    "\004\032\025\001\002\000\012\021\ufff2\024\ufff2\025\ufff2" +
-    "\047\ufff2\001\002\000\014\010\ufff6\030\ufff6\047\ufff6\050" +
-    "\ufff6\051\ufff6\001\002\000\014\010\034\030\031\047\030" +
-    "\050\032\051\033\001\002\000\030\004\uffe1\005\uffe1\006" +
-    "\uffe1\007\uffe1\011\uffe1\014\uffe1\015\uffe1\016\uffe1\026\uffe1" +
-    "\027\uffe1\032\uffe1\001\002\000\014\010\034\030\031\047" +
-    "\030\050\032\051\033\001\002\000\030\004\uffe0\005\uffe0" +
-    "\006\uffe0\007\uffe0\011\uffe0\014\uffe0\015\uffe0\016\uffe0\026" +
-    "\uffe0\027\uffe0\032\uffe0\001\002\000\030\004\uffdf\005\uffdf" +
-    "\006\uffdf\007\uffdf\011\uffdf\014\uffdf\015\uffdf\016\uffdf\026" +
-    "\uffdf\027\uffdf\032\uffdf\001\002\000\014\010\034\030\031" +
-    "\047\030\050\032\051\033\001\002\000\026\004\042\005" +
-    "\036\006\044\007\037\014\046\015\041\016\043\026\047" +
-    "\027\045\032\ufff5\001\002\000\014\010\034\030\031\047" +
-    "\030\050\032\051\033\001\002\000\014\010\034\030\031" +
-    "\047\030\050\032\051\033\001\002\000\004\032\057\001" +
-    "\002\000\014\010\034\030\031\047\030\050\032\051\033" +
-    "\001\002\000\014\010\034\030\031\047\030\050\032\051" +
-    "\033\001\002\000\014\010\034\030\031\047\030\050\032" +
-    "\051\033\001\002\000\014\010\034\030\031\047\030\050" +
-    "\032\051\033\001\002\000\014\010\034\030\031\047\030" +
-    "\050\032\051\033\001\002\000\014\010\034\030\031\047" +
-    "\030\050\032\051\033\001\002\000\014\010\034\030\031" +
-    "\047\030\050\032\051\033\001\002\000\030\004\uffe6\005" +
-    "\uffe6\006\uffe6\007\uffe6\011\uffe6\014\046\015\uffe6\016\uffe6" +
-    "\026\uffe6\027\uffe6\032\uffe6\001\002\000\030\004\uffe9\005" +
-    "\uffe9\006\uffe9\007\uffe9\011\uffe9\014\uffe9\015\uffe9\016\uffe9" +
-    "\026\uffe9\027\uffe9\032\uffe9\001\002\000\030\004\uffe5\005" +
-    "\uffe5\006\uffe5\007\uffe5\011\uffe5\014\046\015\uffe5\016\uffe5" +
-    "\026\uffe5\027\uffe5\032\uffe5\001\002\000\030\004\uffeb\005" +
-    "\uffeb\006\uffeb\007\uffeb\011\uffeb\014\046\015\uffeb\016\uffeb" +
-    "\026\047\027\045\032\uffeb\001\002\000\030\004\042\005" +
-    "\036\006\044\007\037\011\uffe7\014\046\015\uffe7\016\uffe7" +
-    "\026\047\027\045\032\uffe7\001\002\000\030\004\uffed\005" +
-    "\uffed\006\044\007\037\011\uffed\014\046\015\uffed\016\uffed" +
-    "\026\047\027\045\032\uffed\001\002\000\030\004\042\005" +
-    "\036\006\044\007\037\011\uffe8\014\046\015\uffe8\016\uffe8" +
-    "\026\047\027\045\032\uffe8\001\002\000\012\021\ufff4\024" +
-    "\ufff4\025\ufff4\047\ufff4\001\002\000\030\004\uffea\005\uffea" +
-    "\006\uffea\007\uffea\011\uffea\014\046\015\uffea\016\uffea\026" +
-    "\047\027\045\032\uffea\001\002\000\030\004\uffec\005\uffec" +
-    "\006\044\007\037\011\uffec\014\046\015\uffec\016\uffec\026" +
-    "\047\027\045\032\uffec\001\002\000\026\004\042\005\036" +
-    "\006\044\007\037\011\uffe3\014\046\015\041\016\043\026" +
-    "\047\027\045\001\002\000\004\011\064\001\002\000\030" +
-    "\004\uffe2\005\uffe2\006\uffe2\007\uffe2\011\uffe2\014\uffe2\015" +
-    "\uffe2\016\uffe2\026\uffe2\027\uffe2\032\uffe2\001\002\000\030" +
-    "\004\uffe4\005\uffe4\006\uffe4\007\uffe4\011\uffe4\014\046\015" +
-    "\uffe4\016\uffe4\026\uffe4\027\uffe4\032\uffe4\001\002\000\004" +
-    "\036\067\001\002\000\014\010\ufff0\030\ufff0\047\ufff0\050" +
-    "\ufff0\051\ufff0\001\002\000\014\010\034\030\031\047\030" +
-    "\050\032\051\033\001\002\000\026\004\042\005\036\006" +
-    "\044\007\037\014\046\015\041\016\043\026\047\027\045" +
-    "\032\uffef\001\002\000\004\032\073\001\002\000\012\021" +
-    "\uffee\024\uffee\025\uffee\047\uffee\001\002\000\004\002\ufffe" +
-    "\001\002" });
+    "\000\016\021\000\022\000\023\000\024\000\025\000\047" +
+    "\000\001\002\000\016\021\ufffc\022\ufffc\023\ufffc\024\ufffc" +
+    "\025\ufffc\047\ufffc\001\002\000\016\021\013\022\016\023" +
+    "\012\024\020\025\022\047\021\001\002\000\014\010\040" +
+    "\030\035\047\034\050\036\051\037\001\002\000\004\002" +
+    "\uffff\001\002\000\016\021\ufff8\022\ufff8\023\ufff8\024\ufff8" +
+    "\025\ufff8\047\ufff8\001\002\000\016\021\ufffd\022\ufffd\023" +
+    "\ufffd\024\ufffd\025\ufffd\047\ufffd\001\002\000\014\010\040" +
+    "\030\035\047\034\050\036\051\037\001\002\000\016\021" +
+    "\ufff9\022\ufff9\023\ufff9\024\ufff9\025\ufff9\047\ufff9\001\002" +
+    "\000\004\047\ufff7\001\002\000\004\036\uffef\001\002\000" +
+    "\004\047\ufff6\001\002\000\004\047\026\001\002\000\016" +
+    "\021\ufffb\022\ufffb\023\ufffb\024\ufffb\025\ufffb\047\ufffb\001" +
+    "\002\000\016\021\ufffa\022\ufffa\023\ufffa\024\ufffa\025\ufffa" +
+    "\047\ufffa\001\002\000\006\032\ufff1\036\ufff5\001\002\000" +
+    "\004\036\032\001\002\000\004\032\031\001\002\000\016" +
+    "\021\ufff0\022\ufff0\023\ufff0\024\ufff0\025\ufff0\047\ufff0\001" +
+    "\002\000\014\010\ufff4\030\ufff4\047\ufff4\050\ufff4\051\ufff4" +
+    "\001\002\000\014\010\040\030\035\047\034\050\036\051" +
+    "\037\001\002\000\030\004\uffdd\005\uffdd\006\uffdd\007\uffdd" +
+    "\011\uffdd\014\uffdd\015\uffdd\016\uffdd\026\uffdd\027\uffdd\032" +
+    "\uffdd\001\002\000\014\010\040\030\035\047\034\050\036" +
+    "\051\037\001\002\000\030\004\uffdc\005\uffdc\006\uffdc\007" +
+    "\uffdc\011\uffdc\014\uffdc\015\uffdc\016\uffdc\026\uffdc\027\uffdc" +
+    "\032\uffdc\001\002\000\030\004\uffdb\005\uffdb\006\uffdb\007" +
+    "\uffdb\011\uffdb\014\uffdb\015\uffdb\016\uffdb\026\uffdb\027\uffdb" +
+    "\032\uffdb\001\002\000\014\010\040\030\035\047\034\050" +
+    "\036\051\037\001\002\000\026\004\046\005\042\006\050" +
+    "\007\044\014\052\015\045\016\047\026\053\027\051\032" +
+    "\ufff3\001\002\000\014\010\040\030\035\047\034\050\036" +
+    "\051\037\001\002\000\004\032\064\001\002\000\014\010" +
+    "\040\030\035\047\034\050\036\051\037\001\002\000\014" +
+    "\010\040\030\035\047\034\050\036\051\037\001\002\000" +
+    "\014\010\040\030\035\047\034\050\036\051\037\001\002" +
+    "\000\014\010\040\030\035\047\034\050\036\051\037\001" +
+    "\002\000\014\010\040\030\035\047\034\050\036\051\037" +
+    "\001\002\000\014\010\040\030\035\047\034\050\036\051" +
+    "\037\001\002\000\014\010\040\030\035\047\034\050\036" +
+    "\051\037\001\002\000\014\010\040\030\035\047\034\050" +
+    "\036\051\037\001\002\000\030\004\uffe2\005\uffe2\006\uffe2" +
+    "\007\uffe2\011\uffe2\014\052\015\uffe2\016\uffe2\026\uffe2\027" +
+    "\uffe2\032\uffe2\001\002\000\030\004\uffe5\005\uffe5\006\uffe5" +
+    "\007\uffe5\011\uffe5\014\uffe5\015\uffe5\016\uffe5\026\uffe5\027" +
+    "\uffe5\032\uffe5\001\002\000\030\004\uffe1\005\uffe1\006\uffe1" +
+    "\007\uffe1\011\uffe1\014\052\015\uffe1\016\uffe1\026\uffe1\027" +
+    "\uffe1\032\uffe1\001\002\000\030\004\uffe7\005\uffe7\006\uffe7" +
+    "\007\uffe7\011\uffe7\014\052\015\uffe7\016\uffe7\026\053\027" +
+    "\051\032\uffe7\001\002\000\030\004\046\005\042\006\050" +
+    "\007\044\011\uffe3\014\052\015\uffe3\016\uffe3\026\053\027" +
+    "\051\032\uffe3\001\002\000\030\004\uffe9\005\uffe9\006\050" +
+    "\007\044\011\uffe9\014\052\015\uffe9\016\uffe9\026\053\027" +
+    "\051\032\uffe9\001\002\000\030\004\046\005\042\006\050" +
+    "\007\044\011\uffe4\014\052\015\uffe4\016\uffe4\026\053\027" +
+    "\051\032\uffe4\001\002\000\030\004\uffe6\005\uffe6\006\uffe6" +
+    "\007\uffe6\011\uffe6\014\052\015\uffe6\016\uffe6\026\053\027" +
+    "\051\032\uffe6\001\002\000\016\021\ufff2\022\ufff2\023\ufff2" +
+    "\024\ufff2\025\ufff2\047\ufff2\001\002\000\030\004\uffe8\005" +
+    "\uffe8\006\050\007\044\011\uffe8\014\052\015\uffe8\016\uffe8" +
+    "\026\053\027\051\032\uffe8\001\002\000\026\004\046\005" +
+    "\042\006\050\007\044\011\uffdf\014\052\015\045\016\047" +
+    "\026\053\027\051\001\002\000\004\011\070\001\002\000" +
+    "\030\004\uffde\005\uffde\006\uffde\007\uffde\011\uffde\014\uffde" +
+    "\015\uffde\016\uffde\026\uffde\027\uffde\032\uffde\001\002\000" +
+    "\030\004\uffe0\005\uffe0\006\uffe0\007\uffe0\011\uffe0\014\052" +
+    "\015\uffe0\016\uffe0\026\uffe0\027\uffe0\032\uffe0\001\002\000" +
+    "\004\036\073\001\002\000\014\010\uffee\030\uffee\047\uffee" +
+    "\050\uffee\051\uffee\001\002\000\014\010\040\030\035\047" +
+    "\034\050\036\051\037\001\002\000\026\004\046\005\042" +
+    "\006\050\007\044\014\052\015\045\016\047\026\053\027" +
+    "\051\032\uffed\001\002\000\004\032\077\001\002\000\016" +
+    "\021\uffec\022\uffec\023\uffec\024\uffec\025\uffec\047\uffec\001" +
+    "\002\000\026\004\046\005\042\006\050\007\044\014\052" +
+    "\015\045\016\047\026\053\027\051\032\101\001\002\000" +
+    "\016\021\uffea\022\uffea\023\uffea\024\uffea\025\uffea\047\uffea" +
+    "\001\002\000\026\004\046\005\042\006\050\007\044\014" +
+    "\052\015\045\016\047\026\053\027\051\032\103\001\002" +
+    "\000\016\021\uffeb\022\uffeb\023\uffeb\024\uffeb\025\uffeb\047" +
+    "\uffeb\001\002\000\004\002\ufffe\001\002" });
 
   /** Access to parse-action table. */
   public short[][] action_table() {return _action_table;}
@@ -120,29 +135,32 @@ public class parser extends java_cup.runtime.lr_parser {
   /** <code>reduce_goto</code> table. */
   protected static final short[][] _reduce_table = 
     unpackFromStrings(new String[] {
-    "\000\072\000\004\002\003\001\001\000\002\001\001\000" +
-    "\004\012\005\001\001\000\002\001\001\000\004\013\007" +
-    "\001\001\000\004\003\010\001\001\000\012\004\020\005" +
-    "\015\006\011\010\016\001\001\000\002\001\001\000\004" +
-    "\020\065\001\001\000\002\001\001\000\002\001\001\000" +
-    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
-    "\001\001\000\006\014\022\017\023\001\001\000\002\001" +
-    "\001\000\002\001\001\000\002\001\001\000\004\015\026" +
-    "\001\001\000\004\007\034\001\001\000\002\001\001\000" +
-    "\004\007\064\001\001\000\002\001\001\000\002\001\001" +
-    "\000\004\007\061\001\001\000\004\016\037\001\001\000" +
-    "\004\007\060\001\001\000\004\007\057\001\001\000\002" +
-    "\001\001\000\004\007\055\001\001\000\004\007\054\001" +
-    "\001\000\004\007\053\001\001\000\004\007\052\001\001" +
-    "\000\004\007\051\001\001\000\004\007\050\001\001\000" +
-    "\004\007\047\001\001\000\002\001\001\000\002\001\001" +
+    "\000\102\000\004\002\003\001\001\000\002\001\001\000" +
+    "\004\014\005\001\001\000\002\001\001\000\004\015\007" +
+    "\001\001\000\004\003\010\001\001\000\016\004\014\005" +
+    "\024\006\023\007\016\010\013\012\022\001\001\000\004" +
+    "\011\101\001\001\000\002\001\001\000\002\001\001\000" +
+    "\002\001\001\000\004\011\077\001\001\000\002\001\001" +
+    "\000\002\001\001\000\004\022\071\001\001\000\002\001" +
+    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
+    "\000\006\016\026\021\027\001\001\000\002\001\001\000" +
+    "\002\001\001\000\002\001\001\000\004\017\032\001\001" +
+    "\000\004\011\040\001\001\000\002\001\001\000\004\011" +
+    "\070\001\001\000\002\001\001\000\002\001\001\000\004" +
+    "\011\065\001\001\000\004\020\042\001\001\000\004\011" +
+    "\064\001\001\000\002\001\001\000\004\011\062\001\001" +
+    "\000\004\011\061\001\001\000\004\011\060\001\001\000" +
+    "\004\011\057\001\001\000\004\011\056\001\001\000\004" +
+    "\011\055\001\001\000\004\011\054\001\001\000\004\011" +
+    "\053\001\001\000\002\001\001\000\002\001\001\000\002" +
+    "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
+    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
+    "\000\002\001\001\000\004\025\066\001\001\000\002\001" +
+    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
+    "\000\004\023\073\001\001\000\004\011\074\001\001\000" +
+    "\004\024\075\001\001\000\002\001\001\000\002\001\001" +
     "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
-    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
-    "\001\001\000\002\001\001\000\004\023\062\001\001\000" +
-    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
-    "\001\001\000\004\021\067\001\001\000\004\007\070\001" +
-    "\001\000\004\022\071\001\001\000\002\001\001\000\002" +
-    "\001\001\000\002\001\001" });
+    "\002\001\001\000\002\001\001" });
 
   /** Access to <code>reduce_goto</code> table. */
   public short[][] reduce_table() {return _reduce_table;}
@@ -181,7 +199,29 @@ public class parser extends java_cup.runtime.lr_parser {
 
 
 
+
+ class TabelaSimbolo{
+    private String tipo;
+    private boolean EhVetor;
+
+    TabelaSimbolo(String tipo, boolean EhVetor){
+        this.tipo = tipo;
+        this.EhVetor = tipo;
+    }
+    public String getTipo(){
+        return tipo;
+    }
+
+    public boolean getEhVetor(){
+        return EhVetor;
+    }
+
+    private Hashtable<String, TabelaSimbolo> dicionario = new Hashtable<String, TabelaSimbolo>();
+
+ }
       
+
+
 
     public void report_error(String message, Object info) {
         StringBuilder m = new StringBuilder("Error");
@@ -228,6 +268,22 @@ public class parser extends java_cup.runtime.lr_parser {
                 } else {
                     System.out.print("\nfloat " + id);
                     }
+
+                    dicionario.put(id, new TabelaSimbolo(t,false));
+        }
+        public void emit_writeline(String value){
+           TabelaSimbolo t1 = dicionario.get(value);
+
+           if(t1 == null){
+            report_fatal_error("Variável nao declarada["+ value +"]",null);
+           }
+           String tipo = t1.getTipo();
+
+           if(tipo.equals("INT")){
+            System.out.print("printf(\"\\n%d\"," + value +") ");
+           }else{
+            System.out.print("printf(\"\\n%f\"," + value +") ");
+           }
         }
         public void emit_expr(String value){
             System.out.print(value);
@@ -243,6 +299,8 @@ public class parser extends java_cup.runtime.lr_parser {
         public void emit_id(String id){
             System.out.print("\n"+id);
         }
+
+
 
 
 /** Cup generated class to encapsulate user supplied action code.*/
@@ -274,7 +332,7 @@ class CUP$parser$actions {
             {
               Object RESULT =null;
  emit_main(); 
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$0",8, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$0",10, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
@@ -283,7 +341,7 @@ class CUP$parser$actions {
             {
               Object RESULT =(Object) ((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
  emit_startprogram();
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$1",9, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$1",11, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
@@ -349,31 +407,49 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 8: // tipo ::= DECLINT 
+          case 8: // command ::= writel 
+            {
+              Object RESULT =null;
+
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("command",2, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+            }
+          return CUP$parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 9: // command ::= readl 
+            {
+              Object RESULT =null;
+
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("command",2, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+            }
+          return CUP$parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 10: // tipo ::= DECLINT 
             {
               String RESULT =null;
 		int tleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
 		int tright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object t = (Object)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT = "INT"  ;     
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("tipo",6, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("tipo",8, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 9: // tipo ::= DECLFLOAT 
+          case 11: // tipo ::= DECLFLOAT 
             {
               String RESULT =null;
 		int tleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
 		int tright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object t = (Object)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT = "FLOAT";     
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("tipo",6, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("tipo",8, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 10: // NT$2 ::= 
+          case 12: // NT$2 ::= 
             {
               Object RESULT =null;
 		int tleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).left;
@@ -383,12 +459,12 @@ class CUP$parser$actions {
 		int idright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String id = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
  emit_declaracao_variavel(t,id);  
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$2",10, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$2",12, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 11: // NT$3 ::= 
+          case 13: // NT$3 ::= 
             {
               Object RESULT =(Object) ((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
 		int tleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-3)).left;
@@ -398,12 +474,12 @@ class CUP$parser$actions {
 		int idright = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		String id = (String)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
  emit_attr(); 
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$3",11, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$3",13, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 12: // NT$4 ::= 
+          case 14: // NT$4 ::= 
             {
               Object RESULT =(Object) ((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
 		int tleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-5)).left;
@@ -416,12 +492,12 @@ class CUP$parser$actions {
 		int valueright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String value = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
  emit_expr(value); 
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$4",12, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$4",14, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 13: // declare_variable ::= tipo ID NT$2 ATTRIB NT$3 expr NT$4 SEMI 
+          case 15: // declare_variable ::= tipo ID NT$2 ATTRIB NT$3 expr NT$4 SEMI 
             {
               Object RESULT =null;
               // propagate RESULT from NT$4
@@ -435,13 +511,13 @@ class CUP$parser$actions {
 		int valueleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
 		int valueright = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		String value = (String)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-		emit_semi();
+		 emit_semi();  
               CUP$parser$result = parser.getSymbolFactory().newSymbol("declare_variable",4, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-7)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 14: // NT$5 ::= 
+          case 16: // NT$5 ::= 
             {
               Object RESULT =null;
 		int tleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).left;
@@ -451,12 +527,12 @@ class CUP$parser$actions {
 		int idright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String id = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
  emit_declaracao_variavel(t,id);  
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$5",13, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$5",15, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 15: // declare_variable ::= tipo ID NT$5 SEMI 
+          case 17: // declare_variable ::= tipo ID NT$5 SEMI 
             {
               Object RESULT =null;
               // propagate RESULT from NT$5
@@ -473,31 +549,31 @@ class CUP$parser$actions {
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 16: // NT$6 ::= 
+          case 18: // NT$6 ::= 
             {
               Object RESULT =null;
 		int idleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
 		int idright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String id = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 emit_id(id);
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$6",14, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$6",16, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 17: // NT$7 ::= 
+          case 19: // NT$7 ::= 
             {
               Object RESULT =(Object) ((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
 		int idleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
 		int idright = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		String id = (String)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
 emit_attr();
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$7",15, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$7",17, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 18: // NT$8 ::= 
+          case 20: // NT$8 ::= 
             {
               Object RESULT =(Object) ((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
 		int idleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-4)).left;
@@ -507,12 +583,12 @@ emit_attr();
 		int valueright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String value = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
  emit_expr(value); 
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$8",16, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$8",18, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 19: // assign ::= ID NT$6 ATTRIB NT$7 expr NT$8 SEMI 
+          case 21: // assign ::= ID NT$6 ATTRIB NT$7 expr NT$8 SEMI 
             {
               Object RESULT =null;
               // propagate RESULT from NT$8
@@ -529,7 +605,31 @@ emit_attr();
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 20: // expr ::= expr PLUS expr 
+          case 22: // writel ::= WRITELINE expr SEMI 
+            {
+              Object RESULT =null;
+		int valueleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).left;
+		int valueright = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).right;
+		String value = (String)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
+
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("writel",5, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+            }
+          return CUP$parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 23: // readl ::= READLINE expr SEMI 
+            {
+              Object RESULT =null;
+		int valueleft = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).left;
+		int valueright = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).right;
+		String value = (String)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
+
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("readl",6, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+            }
+          return CUP$parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 24: // expr ::= expr PLUS expr 
             {
               String RESULT =null;
 		int e1left = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
@@ -539,12 +639,12 @@ emit_attr();
 		int e2right = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String e2 = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT =  e1 + "+" + e2;  
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",5, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",7, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 21: // expr ::= expr MINUS expr 
+          case 25: // expr ::= expr MINUS expr 
             {
               String RESULT =null;
 		int e1left = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
@@ -554,12 +654,12 @@ emit_attr();
 		int e2right = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String e2 = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT =  e1 + "-" + e2;  
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",5, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",7, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 22: // expr ::= expr TIMES expr 
+          case 26: // expr ::= expr TIMES expr 
             {
               String RESULT =null;
 		int e1left = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
@@ -569,12 +669,12 @@ emit_attr();
 		int e2right = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String e2 = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT =  e1 + "*" + e2;   
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",5, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",7, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 23: // expr ::= expr DIVIDE expr 
+          case 27: // expr ::= expr DIVIDE expr 
             {
               String RESULT =null;
 		int e1left = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
@@ -584,12 +684,12 @@ emit_attr();
 		int e2right = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String e2 = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT =  e1 + "/" + e2;  
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",5, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",7, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 24: // expr ::= expr EQUALS expr 
+          case 28: // expr ::= expr EQUALS expr 
             {
               String RESULT =null;
 		int e1left = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
@@ -599,12 +699,12 @@ emit_attr();
 		int e2right = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String e2 = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT =  e1 + "==" + e2;  
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",5, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",7, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 25: // expr ::= expr GREATER expr 
+          case 29: // expr ::= expr GREATER expr 
             {
               String RESULT =null;
 		int e1left = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
@@ -614,12 +714,12 @@ emit_attr();
 		int e2right = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String e2 = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT =  e1 + ">" + e2;   
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",5, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",7, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 26: // expr ::= expr LESS expr 
+          case 30: // expr ::= expr LESS expr 
             {
               String RESULT =null;
 		int e1left = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
@@ -629,12 +729,12 @@ emit_attr();
 		int e2right = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String e2 = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT =  e1 + "<" + e2;   
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",5, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",7, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 27: // expr ::= expr E expr 
+          case 31: // expr ::= expr E expr 
             {
               String RESULT =null;
 		int e1left = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
@@ -644,12 +744,12 @@ emit_attr();
 		int e2right = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String e2 = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT =  e1 + "&&" + e2;  
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",5, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",7, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 28: // expr ::= expr OU expr 
+          case 32: // expr ::= expr OU expr 
             {
               String RESULT =null;
 		int e1left = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
@@ -659,36 +759,36 @@ emit_attr();
 		int e2right = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String e2 = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT =  e1 + "||" + e2;  
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",5, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",7, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 29: // expr ::= NAO expr 
+          case 33: // expr ::= NAO expr 
             {
               String RESULT =null;
 		int e1left = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
 		int e1right = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String e1 = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT =   "!" + e1;      
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",5, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",7, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 30: // NT$9 ::= 
+          case 34: // NT$9 ::= 
             {
               String RESULT =null;
 		int e1left = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
 		int e1right = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String e1 = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
  RESULT =  "(" + e1  + ")"; 
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$9",17, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("NT$9",19, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 31: // expr ::= LPAREN expr NT$9 RPAREN 
+          case 35: // expr ::= LPAREN expr NT$9 RPAREN 
             {
               String RESULT =null;
               // propagate RESULT from NT$9
@@ -697,43 +797,43 @@ emit_attr();
 		int e1right = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		String e1 = (String)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
 
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",5, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-3)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",7, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-3)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 32: // expr ::= ID 
+          case 36: // expr ::= ID 
             {
               String RESULT =null;
 		int ileft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
 		int iright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String i = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT = i;           
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",5, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",7, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 33: // expr ::= INTT 
+          case 37: // expr ::= INTT 
             {
               String RESULT =null;
 		int nleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
 		int nright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String n = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT = n;                
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",5, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",7, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 34: // expr ::= FLOATT 
+          case 38: // expr ::= FLOATT 
             {
               String RESULT =null;
 		int nleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
 		int nright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String n = (String)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT = n;                
-              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",5, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
+              CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",7, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;
 

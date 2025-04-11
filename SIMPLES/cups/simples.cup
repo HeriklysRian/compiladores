@@ -3,6 +3,7 @@
 /* Import the class java_cup.runtime.*  */
 import java_cup.runtime.*;
 import java.util.*;
+
    
 parser code {:
 
@@ -11,8 +12,8 @@ parser code {:
     private boolean EhVetor;
 
     TabelaSimbolo(String tipo, boolean EhVetor){
-        this.tipo;
-        this.EhVetor;
+        this.tipo = tipo;
+        this.EhVetor = tipo;
     }
     public String getTipo(){
         return tipo;
@@ -86,9 +87,9 @@ parser code {:
            String tipo = t1.getTipo();
 
            if(tipo.equals("INT")){
-            System.out.print("printf(\"\\n%d\"," + value +) ");
+            System.out.print("printf(\"\\n%d\"," + value +") ");
            }else{
-            System.out.print("printf(\"\\n%f\"," + value +) ");
+            System.out.print("printf(\"\\n%f\"," + value +") ");
            }
         }
         public void emit_expr(String value){
