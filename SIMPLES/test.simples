@@ -2,9 +2,9 @@
 
 programa
 inicio
-   inteiro a;
-   inteiro b;
-   inteiro c;
+   inteiro a <- 9;
+   inteiro b <- 5;
+   inteiro c <- 7;
    flutuante d <- d+b;
    flutuante g <- c+a;
    flutuante f <- f+a;
@@ -12,7 +12,7 @@ inicio
    flutuante p <- p+r;
    flutuante e <- e+a;
    b <- a + b;
-   escreva a;
+   escreva b;
 
 fim
 

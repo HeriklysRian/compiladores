@@ -203,22 +203,21 @@ public class parser extends java_cup.runtime.lr_parser {
 
 
 
- class TabelaSimbolo{
-    private String tipo;
-    private boolean EhVetor;
+    class TabelaSimbolo{
+        private String tipo;
+        private boolean EhVetor;
 
-    TabelaSimbolo(String tipo, boolean EhVetor){
-        this.tipo = tipo;
-        this.EhVetor = EhVetor;
-    }
-    public String getTipo(){
-        return tipo;
-    }
+        TabelaSimbolo(String tipo, boolean EhVetor){
+            this.tipo = tipo;
+            this.EhVetor = EhVetor;
+        }
+        public String getTipo(){
+            return tipo;
+        }
 
-    public boolean getEhVetor(){
-        return EhVetor;
-    }
-
+        public boolean getEhVetor(){
+            return EhVetor;
+        }
     }
  private Hashtable<String, TabelaSimbolo> dicionario = new Hashtable<String, TabelaSimbolo>();
       
@@ -282,9 +281,9 @@ public class parser extends java_cup.runtime.lr_parser {
            String tipo = t1.getTipo();
 
            if(tipo.equals("INT")){
-            System.out.print("\nprintf(\"\\n%d\"," + value +") ");
+            System.out.print("\nprintf(\"%d\\n\"," + value +")");
            }else{
-            System.out.print("\nprintf(\"\\n%f\"," + value +") ");
+            System.out.print("\nprintf(\"%f\\n\"," + value +")");
            }
         }
         public void emit_expr(String value){
