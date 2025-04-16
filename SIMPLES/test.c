@@ -11,5 +11,6 @@ float r = r+b;
 float p = p+r;
 float e = e+a;
 b = a+b;
+printf("\n%d",a) ;
 return 0;
 }

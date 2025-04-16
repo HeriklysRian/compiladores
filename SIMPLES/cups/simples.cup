@@ -86,9 +86,9 @@ parser code {:
            String tipo = t1.getTipo();
 
            if(tipo.equals("INT")){
-            System.out.print("printf(\"\\n%d\"," + value +") ");
+            System.out.print("\nprintf(\"\\n%d\"," + value +") ");
            }else{
-            System.out.print("printf(\"\\n%f\"," + value +") ");
+            System.out.print("\nprintf(\"\\n%f\"," + value +") ");
            }
         }
         public void emit_expr(String value){
@@ -173,9 +173,9 @@ assign		::=   ID:id             {:emit_id(id);:}
                   SEMI              {: emit_semi(); :}
                  ;
 
-writel      ::= WRITELINE
-                expr:value             
-                SEMI                   
+writel      ::= WRITELINE       {: :}
+                expr:value       {:emit_writeline(value);:}      
+                SEMI               {: emit_semi(); :}    
                 ;
 
 readl      ::= READLINE
