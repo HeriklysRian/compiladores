@@ -206,7 +206,7 @@ public class parser extends java_cup.runtime.lr_parser {
 
     TabelaSimbolo(String tipo, boolean EhVetor){
         this.tipo = tipo;
-        this.EhVetor = tipo;
+        this.EhVetor = EhVetor;
     }
     public String getTipo(){
         return tipo;
@@ -216,9 +216,10 @@ public class parser extends java_cup.runtime.lr_parser {
         return EhVetor;
     }
 
-    private Hashtable<String, TabelaSimbolo> dicionario = new Hashtable<String, TabelaSimbolo>();
+    
 
  }
+ private Hashtable<String, TabelaSimbolo> dicionario = new Hashtable<String, TabelaSimbolo>();
       
 
 

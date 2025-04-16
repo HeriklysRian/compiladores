@@ -13,7 +13,7 @@ parser code {:
 
     TabelaSimbolo(String tipo, boolean EhVetor){
         this.tipo = tipo;
-        this.EhVetor = tipo;
+        this.EhVetor = EhVetor;
     }
     public String getTipo(){
         return tipo;
@@ -23,9 +23,8 @@ parser code {:
         return EhVetor;
     }
 
-    private Hashtable<String, TabelaSimbolo> dicionario = new Hashtable<String, TabelaSimbolo>();
-
- }
+    }
+ private Hashtable<String, TabelaSimbolo> dicionario = new Hashtable<String, TabelaSimbolo>();
       
 
 
