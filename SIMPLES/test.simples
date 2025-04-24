@@ -13,6 +13,7 @@ inicio
    flutuante e <- e+a;
    b <- a + b;
    escreva b;
+   leia c;
 
 fim
 

@@ -90,6 +90,22 @@ parser code {:
             System.out.print("\nprintf(\"%f\\n\"," + value +")");
            }
         }
+
+            public void emit_readline(String value){
+           TabelaSimbolo t1 = dicionario.get(value);
+
+           if(t1 == null){
+            report_fatal_error("Variável nao declarada["+ value +"]",null);
+           }
+           String tipo = t1.getTipo();
+
+           if(tipo.equals("INT")){
+            System.out.print("\nscanf(\"%d\\n\", &" + value +")");
+           }else{
+            System.out.print("\nscanf(\"%f\\n\", &" + value +")");
+           }
+        }
+
         public void emit_expr(String value){
             System.out.print(value);
         }
@@ -177,9 +193,9 @@ writel      ::= WRITELINE       {: :}
                 SEMI               {: emit_semi(); :}    
                 ;
 
-readl      ::= READLINE
-                expr:value             
-                SEMI                   
+readl      ::= READLINE         {: :}
+                expr:value       {:emit_readline(value);:}       
+                SEMI               {: emit_semi(); :}           
                 ;
 
 
