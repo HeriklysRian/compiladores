@@ -216,3 +216,17 @@ expr     ::= expr:e1 PLUS expr:e2         {: RESULT =  e1 + "+" + e2;  :}
            | INTT: n                      {: RESULT = n;                :}
            | FLOATT:n                     {: RESULT = n;                :}
            ;
+
+if          ::= IFF
+                expr: value             {:emit_if(value); :}
+                THENN                   {:emit_startblock(); :}
+                list_command            
+                elsepart
+                ENDELSE                 {:emit_endblock(); :}
+                ;
+
+elsepart    ::= ELSEE                   {:emit_endblock(); emit_else(); emit_startblock(); :}
+                list_command
+                |/*empty*/
+                ;
+
