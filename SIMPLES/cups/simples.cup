@@ -257,7 +257,7 @@ terminal String     INTT;
 terminal String     FLOATT;
 
 /* Non terminals */
-non terminal             program, list_command, command, assign , declare_variable, writel, readl,if,elsepart,while,for;
+non terminal             program, list_command, command, assign , declare_variable, writel, readl,if,elsepart,for,while;
 non terminal  String    expr,tipo,vetor;      
 
 /* Precedences */
@@ -287,8 +287,8 @@ command ::=    declare_variable
             |  readl
             |  writel
             |  if
-            |  while 
-            |  for           
+            |  for
+            |  while            
             ;
           
 
@@ -351,9 +351,9 @@ while       ::= ENQUANTO expr:value {: emit_while(value); :}
                                                       
 
 expr     ::= expr:e1 PLUS expr:e2         {: RESULT =  e1 + "+" + e2;  dicionario.put(RESULT,new TabelaSimbolo(checkExpr(e1,e2),false));  :}
-	         | expr:e1 MINUS expr:e2        {: RESULT =  e1 + "-" + e2;  dicionario.put(RESULT,new TabelaSimbolo(checkExpr(e1,e2),false)); :}
+	       | expr:e1 MINUS expr:e2        {: RESULT =  e1 + "-" + e2;  dicionario.put(RESULT,new TabelaSimbolo(checkExpr(e1,e2),false)); :}
            | expr:e1 TIMES expr:e2        {: RESULT =  e1 + "*" + e2;  dicionario.put(RESULT,new TabelaSimbolo(checkExpr(e1,e2),false));  :}  
-	         | expr:e1 DIVIDE expr:e2       {: RESULT =  e1 + "/" + e2;  dicionario.put(RESULT,new TabelaSimbolo(checkExpr(e1,e2),false));  :}  
+	       | expr:e1 DIVIDE expr:e2       {: RESULT =  e1 + "/" + e2;  dicionario.put(RESULT,new TabelaSimbolo(checkExpr(e1,e2),false));  :}  
            | expr:e1 EQUALS expr:e2       {: RESULT =  e1 + "==" + e2; dicionario.put(RESULT,new TabelaSimbolo(checkExpr(e1,e2),false));  :}
            | expr:e1 GREATER expr:e2      {: RESULT =  e1 + ">" + e2;  dicionario.put(RESULT,new TabelaSimbolo(checkExpr(e1,e2),false)); :}
            | expr:e1 LESS expr:e2         {: RESULT =  e1 + "<" + e2;  dicionario.put(RESULT,new TabelaSimbolo(checkExpr(e1,e2),false)); :}
